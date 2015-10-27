@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.withliyh.tinycopper.view.CutAvatarView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="matrix"
+        android:layout_weight="0.8"
+        android:id="@+id/tiny_cropper_image_view"/>
+    <LinearLayout
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/tiny_cropper_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"/>
+        <Button
+            android:id="@+id/tiny_cropper_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="保存"/>
+    </LinearLayout>
+
+</LinearLayout>

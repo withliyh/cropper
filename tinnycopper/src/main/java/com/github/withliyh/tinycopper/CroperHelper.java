@@ -25,7 +25,17 @@ public class CroperHelper {
     }
     public CroperHelper(Activity context) {
         mContext = context;
-        mCacheDir = context.getCacheDir();
+        if (CropUtil.isExitsSdcard()) {
+            File sdcardRoot = CropUtil.getExternalStorageDirectory();
+            mCacheDir = new File(sdcardRoot, "TEMP");
+            if (!mCacheDir.exists()) {
+                if (!mCacheDir.mkdirs()) {
+                    throw new IllegalStateException("创建目录失败");
+                }
+            }
+        } else {
+            throw new IllegalArgumentException("找不到存储");
+        }
     }
 
     public void setOnResult(OnResult onResult) {

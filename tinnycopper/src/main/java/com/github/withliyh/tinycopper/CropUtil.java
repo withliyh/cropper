@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 
@@ -110,5 +111,17 @@ class CropUtil {
         return null;
     }
 
+    /**
+     * 检测Sdcard是否存在
+     *
+     * @return true 存在 false 不存在
+     */
+    public static boolean isExitsSdcard() {
+        return (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED));
+    }
+
+    public static File getExternalStorageDirectory() {
+        return Environment.getExternalStorageDirectory();
+    }
 
 }

@@ -2,6 +2,9 @@
 圆形头像剪裁库
 
 使用方式更简单，支持图片浏览和拍照
+
+```Java
+
 public class MainActivity extends AppCompatActivity {
 
     CroperHelper croperHelper;
@@ -40,3 +43,5 @@ public class MainActivity extends AppCompatActivity {
         croperHelper.onActivityResult(requestCode, resultCode, data);
     }
 }
+
+```
